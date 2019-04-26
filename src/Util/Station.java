@@ -9,6 +9,7 @@ public class Station {
     Queue<Cargo> temp=new LinkedList<>();
     Queue<Cargo> tempque=new LinkedList<>();
     ArrayList<Cargo> list=new ArrayList<>();
+    Stack<Integer> ın=new Stack();
     public Station(int id , PrintStream printStream) throws FileNotFoundException {
        this.printStream=printStream;
         this.id=id;
@@ -22,7 +23,6 @@ public class Station {
         this.id = id;
     }
     public void process(Train train) throws FileNotFoundException {
-
 
 
 
@@ -45,7 +45,7 @@ public class Station {
 
         //istasyondaki gerekli kargoları trene bindir
         for(int i=0; i<list.size(); i++) {
-            if(list.get(i).getTargetStation()!=this.id) {
+            if(list.get(i).getTargetStation()!=this.id && list.get(i).getTargetStation()>this.id) {
                 temp.add(list.get(i));
             }else {
                 tempque.add(list.get(i));
