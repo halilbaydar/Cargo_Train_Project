@@ -13,7 +13,6 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         readAndInitialize(args);
-
     }
     public static void readAndInitialize(String[] args) throws FileNotFoundException {
         PrintStream printStream=new PrintStream(new File(args[1]));
@@ -55,11 +54,12 @@ public class Main {
             stations = new Station[numberofstations];
 
             for (int i = 0; i < numberofstations; i++) {
-                stations[i] = new Station(i,printStream);
+                stations[i] = new Station(i,printStream,numberofstations);
             }
 
 
-            while (scanner.hasNextLine()) {
+            while (scanner.hasNextInt()) {
+            	
                 cargoid = scanner.nextInt();
                 loadingstationofcaargo = scanner.nextInt();
                 targetstationid = scanner.nextInt();

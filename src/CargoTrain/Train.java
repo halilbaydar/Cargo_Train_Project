@@ -51,7 +51,7 @@ public class Train{
         }
         return head;
     }
-    public int finsizeoftrain() {
+    public int findsizeoftrain() {
     	int size=0;
     	if(head!=null) {
     		Carriage curr=head;
