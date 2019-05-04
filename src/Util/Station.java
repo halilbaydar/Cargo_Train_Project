@@ -10,7 +10,6 @@ public class Station {
 	Queue<Cargo> temp=new LinkedList<>();
 	Queue<Cargo> tempque=new LinkedList<>();
 	ArrayList<Cargo> list=new ArrayList<>();
-	Stack<Integer> ın=new Stack();
 	public Station(int id , PrintStream printStream, int numberofstations) throws FileNotFoundException {
 		step++;
 		this.numberofstations=numberofstations;
@@ -62,6 +61,7 @@ public class Station {
 		while(!tempque.isEmpty()){
 			printStream.println(tempque.poll());
 		}
+		
 
 
 		train.setLengt(train.findsizeoftrain());
